@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL shortner</title>
+</head>
+<body>
+    <form action="/shortnerUrl" method="post">
+        <label for="URL">URL</label>
+        <input type="text" name="URL" id="URL">
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Full URL</th>
+                <th>Short URL</th>
+                <th>clicks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for( let i = 0; i < shorturl.length; i++ ) { %>
+            <tr>
+                
+                    <td><a href="<%= shorturl[i].Fullurl %> "><%= shorturl[i].Fullurl %></a></td>
+                    <td><a href="<%= shorturl[i].Shorturl %>">/<%= shorturl[i].Shorturl %></a></td>
+                    <td><%= shorturl[i].clicks %></td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+        <!-- <table>
+            <thead>
+                <tr>
+                    <th>Full URL</th>
+                    <th>Short URL</th>
+                    <th>clicks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% shorturl.forEach(sorter => { %>
+                 
+                    <tr>
+                        <td><a href="<%= sorter.Fullurl %> "><%= sorter.Fullurl %></a></td>
+                        <td><a href="<%= sorter.Shorturl %>"><%= sorter.Shorturl %></a></td>
+                        <td><%= sorter.clicks %></td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table> -->
+</body>
+</html>
