@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express=require("express");
 const mongoose=require("mongoose")
 const shortnerUrl=require("./models/model")
@@ -24,6 +25,6 @@ app.get("/:short", async (req,res)=>{
     shorturl1.save();
     res.redirect(shorturl1.Fullurl);
 })
-app.listen(process.env.PORT || 5000,()=>{
-    console.log("server started on port 5000");
+app.listen(process.env.PORT,()=>{
+    console.log("server started on port"+ process.env.PORT);
 })
